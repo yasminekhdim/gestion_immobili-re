@@ -27,13 +27,11 @@ ob_start();
             <td><?= $imm[6] ?></td>
             <td><?= $imm[7] ?></td>
             <td><?= $imm[8] ?></td>
-            <td><?= $imm[9] ?></td>
-            <td></td>
             <td>
-                <a href="../controller/delete.php?ref=<?= $app[0] ?>" class="btn btn-danger btn-sm">Supprimer</a>
+                <a href="../controller/delete.php?ref=<?= $imm[0] ?>" class="btn btn-danger btn-sm">Supprimer</a>
             </td>
             <td>
-                <a href="../controller/update.php?ref=<?= $app[0] ?>" class="btn btn-primary btn-sm">Editer</a>
+                <a href="../controller/update.php?ref=<?= $imm[0] ?>" class="btn btn-primary btn-sm">Editer</a>
             </td>
         </tr>
     <?php

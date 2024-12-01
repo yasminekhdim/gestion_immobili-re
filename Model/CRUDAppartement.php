@@ -16,16 +16,10 @@ class CRUDAppartement
         $surf = $imm->getSurface();
         $nbPieces = $imm->getNbPieces();
         $DU = $imm->getDomaineUsage();
-        $nature = $imm->getNature(); // nb pieces
-        echo $nature;
-        echo "<br>";
-        $NbEtage = $imm->getNbEtage();//
-        echo $NbEtage;
-        echo "<br>";
+        $nature = $imm->getNature();
+        $NbEtage = $imm->getNbEtage();
         $Surf_com = $imm->getSurfCom();
-        echo $Surf_com;
-        $sql = "INSERT INTO appartement VALUES (NULL,'$prop','$loc',$surf,$nbPieces,'$DU','$nature',$NbEtage,$Surf_com)";
-        echo "$sql";
+        $sql = "INSERT INTO immobilier VALUES (NULL,'$prop','$loc',$surf,$nbPieces,'$DU','$nature',$NbEtage,$Surf_com)";
         $res = $this->connexion->exec($sql);
         return $res;
     }
@@ -55,7 +49,7 @@ class CRUDAppartement
         $nature = $imm->getNature();
         $NbEtage = $imm->getNbEtage();
         $Surf_com = $imm->getSurfCom();
-        $sql = "update appartement 
+        $sql = "update immobilier 
         set réf=" . $ref . ",
             propriétaire='" . $prop . "',
             localité='" . $loc . "',
@@ -66,7 +60,6 @@ class CRUDAppartement
             NbEtage=" . $NbEtage . ",
             Surface_Commune=" . $Surf_com . "
             where réf=" . $ref;
-        echo $sql;
         $res = $this->connexion->exec($sql);
         return $res;
     }

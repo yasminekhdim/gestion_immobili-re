@@ -10,7 +10,7 @@ class immobiblier
     private $nature;
     private $nbEtage;
     private $Surf_com;
-    function __construct($ref, $propriétaire, $localité, $surf, $nbPieces, $domaineUsage,$nature,$nbEtage,$surf_com)
+    function __construct($ref, $propriétaire, $localité, $surf, $nbPieces, $domaineUsage,$nature,$nbEtage,$Surf_com)
     {
         $this->ref = $ref;
         $this->propriétaire = $propriétaire;
@@ -20,7 +20,7 @@ class immobiblier
         $this->domaineUsage = $domaineUsage;
         $this->nature=$nature;
         $this->nbEtage=$nbEtage;
-        $this->Surf_com=$surf_com;
+        $this->Surf_com=$Surf_com;
     }
 
 
@@ -130,10 +130,6 @@ class immobiblier
 
         return $this;
     }
-
-    /**
-     * Get the value of Surf_com
-     */
     public function getSurfCom()
     {
         return $this->Surf_com;

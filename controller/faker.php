@@ -17,7 +17,22 @@ for ($i = 0; $i < 100; $i++) {
     } else {
         $DU = "domicile";
     }
-    $SEC = random_int(50, 100);
-    $sql .= "INSERT INTO appartement VALUES (NULL,'$prop','$loc',$surf,$nbP,'$DU',$SEC);";
+    $nat = random_int(0, 1);
+    if ($nat == 0) {
+        $nature = "villa";
+    } else {
+        $nature = "Appartement";
+    }
+    if ($nature == "Appartement") {
+        $nbEtage = 0;
+    } else {
+        $nbEtage = random_int(1, 5);
+    }
+    if ($nature == "villa") {
+        $SC = 0;
+    } else {
+        $SC = random_int(50, 100);
+    }
+    $sql .= "INSERT INTO immobilier VALUES (NULL,'$prop','$loc',$surf,$nbP,'$DU','$nature',$nbEtage,$SC);";
 }
 $pdo->exec($sql);

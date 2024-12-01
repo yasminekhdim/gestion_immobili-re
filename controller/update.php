@@ -2,16 +2,18 @@
 require_once "../Model/CRUDAppartement.php";
 $crud = new CRUDAppartement();
 if (isset($_POST['ok1'])) {
-    $prop = $imm->getPropriétaire();
-    $loc = $imm->getLocalité();
-    $surf = $imm->getSurface();
-    $nbPieces = $imm->getNbPieces();
-    $DU = $imm->getDomaineUsage();
-    $nature = $imm->getNature();
-    $NbEtage = $imm->getNbEtage();
-    $Surf_com = $imm->getSurfCom();
-    $imm=new immobiblier($ref, $prop, $loc, $surf, $nbPieces, $DU,$nature,$NbEtage,$Surf_com);
+    $ref = htmlspecialchars($_POST['ref']);
+    $prop = htmlspecialchars($_POST['prop']);
+    $loc = htmlspecialchars($_POST['loc']);
+    $surf = htmlspecialchars($_POST['surf']);
+    $nbPieces = htmlspecialchars($_POST['nbPieces']);
+    $DU = htmlspecialchars($_POST['Du']);
+    $nature = htmlspecialchars($_POST['nature']);
+    $NbEtage = htmlspecialchars($_POST['NbEtage']);
+    $Surf_com = htmlspecialchars($_POST['Surf_Com']);
+    $imm = new immobiblier($ref, $prop, $loc, $surf, $nbPieces, $DU, $nature, $NbEtage, $Surf_com);
     $res = $crud->ModifierApp($imm);
+    echo $res;
     if ($res) {
         header("location:all.php");
         exit;
